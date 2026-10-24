@@ -3,47 +3,47 @@
   --navy-2: #173b61;
   --blue: #286b9f;
   --blue-light: #e8f1f8;
-
   --green: #16835f;
   --green-light: #e7f5ef;
-
   --orange: #bc741a;
   --orange-light: #fff5e6;
-
   --red: #c84c52;
   --red-light: #fff0f1;
-
   --text: #10233f;
   --muted: #6b7d91;
   --border: #dce4ec;
-
   --surface: #ffffff;
   --background: #f3f6f9;
 }
 
-
-/* APP */
+/* =========================
+   APP
+========================= */
 
 .app {
   min-height: 100vh;
-
   background: var(--background);
 }
 
 .mainContent {
   width: min(1320px, 92%);
-
   margin: 0 auto;
-
   padding: 42px 0 70px;
 }
 
+.eyebrow {
+  color: var(--blue);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+}
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 
 .topbar {
   min-height: 76px;
-
   padding: 13px 5%;
 
   display: flex;
@@ -51,9 +51,7 @@
   justify-content: space-between;
   gap: 20px;
 
-  border-bottom:
-    1px solid var(--border);
-
+  border-bottom: 1px solid var(--border);
   background: white;
 }
 
@@ -71,9 +69,7 @@
   place-items: center;
 
   border-radius: 10px;
-
   background: var(--navy);
-
   color: white;
 
   font-size: 18px;
@@ -87,15 +83,12 @@
 
 .brandCopy strong {
   color: var(--text);
-
   font-size: 18px;
 }
 
 .brandCopy span {
   margin-top: 2px;
-
   color: var(--muted);
-
   font-size: 9px;
 }
 
@@ -110,39 +103,26 @@
   padding: 6px 9px;
 
   border-radius: 999px;
-
   background: var(--blue-light);
-
   color: var(--blue);
 
   font-size: 8px;
   font-weight: 800;
-
   letter-spacing: 0.7px;
 }
 
 .incidentNumber {
   color: #65788c;
-
   font-size: 10px;
   font-weight: 700;
 }
 
-.eyebrow {
-  color: var(--blue);
-
-  font-size: 9px;
-  font-weight: 800;
-
-  letter-spacing: 1.4px;
-}
-
-
-/* CAPTURE */
+/* =========================
+   CAPTURE SCREEN
+========================= */
 
 .capturePage {
   max-width: 900px;
-
   margin: 0 auto;
 }
 
@@ -155,39 +135,28 @@
 
   color: var(--text);
 
-  font-size: clamp(
-    32px,
-    5vw,
-    44px
-  );
-
+  font-size: clamp(32px, 5vw, 44px);
   letter-spacing: -1.4px;
 }
 
 .pageIntro p {
   max-width: 600px;
-
   margin: 0 auto;
 
   color: var(--muted);
 
   font-size: 12px;
-
   line-height: 1.6;
 }
 
 .recorderCard {
   margin-top: 30px;
-
   padding: 44px;
 
-  border:
-    1px solid var(--border);
-
+  border: 1px solid var(--border);
   border-radius: 16px;
 
   background: white;
-
   text-align: center;
 }
 
@@ -198,7 +167,6 @@
 .recordIcon {
   width: 72px;
   height: 72px;
-
   margin: 0 auto;
 
   display: grid;
@@ -207,7 +175,6 @@
   border-radius: 50%;
 
   background: var(--blue-light);
-
   color: var(--blue);
 
   font-size: 27px;
@@ -215,16 +182,13 @@
 
 .recorderCardLive .recordIcon {
   background: var(--red-light);
-
   color: var(--red);
 }
 
 .readyBadge,
 .liveBadge {
   width: fit-content;
-
   margin: 18px auto 0;
-
   padding: 6px 10px;
 
   display: flex;
@@ -239,13 +203,11 @@
 
 .readyBadge {
   background: var(--green-light);
-
   color: var(--green);
 }
 
 .liveBadge {
   background: var(--red-light);
-
   color: var(--red);
 }
 
@@ -254,7 +216,6 @@
   height: 6px;
 
   border-radius: 50%;
-
   background: var(--red);
 }
 
@@ -262,26 +223,22 @@
   margin: 12px 0 7px;
 
   color: var(--text);
-
   font-size: 23px;
 }
 
 .recorderCard > p {
   max-width: 560px;
-
   margin: 0 auto;
 
   color: var(--muted);
 
   font-size: 10px;
-
   line-height: 1.6;
 }
 
 .recordButton,
 .stopButton {
   margin-top: 25px;
-
   padding: 13px 24px;
 
   border: 0;
@@ -308,20 +265,16 @@
 
   font-size: 31px;
   font-weight: 750;
-
-  font-variant-numeric:
-    tabular-nums;
+  font-variant-numeric: tabular-nums;
 }
 
 .audioWave {
   height: 66px;
-
   margin: 18px auto;
 
   display: flex;
   align-items: center;
   justify-content: center;
-
   gap: 4px;
 }
 
@@ -329,12 +282,9 @@
   width: 4px;
 
   border-radius: 100px;
-
   background: var(--red);
 
-  animation:
-    wavePulse 0.7s
-    ease-in-out infinite alternate;
+  animation: wavePulse 0.7s ease-in-out infinite alternate;
 }
 
 .audioWave span:nth-child(2n) {
@@ -357,13 +307,10 @@
 
 .safetyNotice {
   max-width: 600px;
-
   margin: 27px auto 0;
-
   padding: 13px 14px;
 
   border-radius: 9px;
-
   background: #f5f7f9;
 
   text-align: left;
@@ -376,7 +323,6 @@
 
 .safetyNotice strong {
   color: #324a62;
-
   font-size: 9px;
 }
 
@@ -386,21 +332,17 @@
   color: var(--muted);
 
   font-size: 8px;
-
   line-height: 1.5;
 }
 
 .recorderError {
   max-width: 600px;
-
   margin: 17px auto 0;
-
   padding: 11px 13px;
 
   border-radius: 8px;
 
   background: var(--red-light);
-
   color: var(--red);
 
   font-size: 9px;
@@ -410,19 +352,14 @@
   margin-top: 17px;
 
   display: grid;
-
-  grid-template-columns:
-    repeat(4, 1fr);
-
+  grid-template-columns: repeat(4, 1fr);
   gap: 10px;
 }
 
 .captureSteps > div {
   padding: 15px;
 
-  border:
-    1px solid var(--border);
-
+  border: 1px solid var(--border);
   border-radius: 10px;
 
   background: white;
@@ -437,7 +374,6 @@
 
 .captureSteps strong {
   display: block;
-
   margin-top: 7px;
 
   color: var(--text);
@@ -453,21 +389,19 @@
   font-size: 8px;
 }
 
-
-/* PROCESSING */
+/* =========================
+   PROCESSING SCREEN
+========================= */
 
 .processingPage {
   max-width: 650px;
-
   margin: 55px auto;
 }
 
 .processingCard {
   padding: 43px;
 
-  border:
-    1px solid var(--border);
-
+  border: 1px solid var(--border);
   border-radius: 16px;
 
   background: white;
@@ -479,26 +413,18 @@
   width: 52px;
   height: 52px;
 
-  margin:
-    0 auto 20px;
+  margin: 0 auto 20px;
 
-  border:
-    4px solid #e5ebf1;
-
-  border-top-color:
-    var(--blue);
-
+  border: 4px solid #e5ebf1;
+  border-top-color: var(--blue);
   border-radius: 50%;
 
-  animation:
-    spinner 0.8s
-    linear infinite;
+  animation: spinner 0.8s linear infinite;
 }
 
 @keyframes spinner {
   to {
-    transform:
-      rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
@@ -506,7 +432,6 @@
   margin: 8px 0;
 
   color: var(--text);
-
   font-size: 25px;
 }
 
@@ -514,7 +439,6 @@
   margin: 0;
 
   color: var(--muted);
-
   font-size: 10px;
 }
 
@@ -522,7 +446,6 @@
   margin-top: 25px;
 
   display: grid;
-
   gap: 8px;
 
   text-align: left;
@@ -532,22 +455,17 @@
   padding: 11px 13px;
 
   display: grid;
-
-  grid-template-columns:
-    24px 1fr;
-
+  grid-template-columns: 24px 1fr;
   align-items: center;
 
   border-radius: 8px;
 
   background: #f5f7f9;
-
   color: #748598;
 }
 
 .processingSteps > div > span {
   font-size: 10px;
-
   font-weight: 800;
 }
 
@@ -566,33 +484,28 @@
 
 .processingSteps small {
   margin-top: 2px;
-
   font-size: 7px;
 }
 
 .processingDone {
-  color:
-    var(--green) !important;
+  color: var(--green) !important;
 }
 
 .processingActive {
-  background:
-    var(--blue-light) !important;
-
-  color:
-    var(--blue) !important;
+  background: var(--blue-light) !important;
+  color: var(--blue) !important;
 }
 
 .processingNotice {
   margin-top: 20px;
 
   color: #8795a4;
-
   font-size: 8px;
 }
 
-
-/* REPORT HEADER */
+/* =========================
+   REPORT HEADER
+========================= */
 
 .reportHeader {
   margin-bottom: 18px;
@@ -600,7 +513,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   gap: 20px;
 }
 
@@ -610,7 +522,6 @@
   color: var(--text);
 
   font-size: 32px;
-
   letter-spacing: -1px;
 }
 
@@ -618,27 +529,22 @@
   margin: 0;
 
   color: var(--muted);
-
   font-size: 10px;
 }
 
 .reportHeaderActions {
   display: flex;
   align-items: center;
-
   gap: 8px;
 }
 
 .secondaryButton {
   padding: 9px 12px;
 
-  border:
-    1px solid #c7d2dc;
-
+  border: 1px solid #c7d2dc;
   border-radius: 8px;
 
   background: white;
-
   color: #425b74;
 
   font-size: 9px;
@@ -647,19 +553,15 @@
 
 .reportWarning {
   margin-bottom: 18px;
-
   padding: 12px 14px;
 
   display: flex;
   align-items: center;
-
   gap: 10px;
 
-  border-left:
-    3px solid var(--orange);
+  border-left: 3px solid var(--orange);
 
-  background:
-    var(--orange-light);
+  background: var(--orange-light);
 }
 
 .reportWarning > div {
@@ -674,7 +576,6 @@
   border-radius: 50%;
 
   background: #f1d4a7;
-
   color: #93601e;
 
   font-size: 9px;
@@ -692,7 +593,6 @@
 
 .reportWarning strong {
   color: #8d5917;
-
   font-size: 9px;
 }
 
@@ -700,26 +600,21 @@
   margin-top: 2px;
 
   color: #886d4b;
-
   font-size: 8px;
 }
 
-
-/* REPORT LAYOUT */
+/* =========================
+   REPORT LAYOUT
+========================= */
 
 .reportLayout {
   display: grid;
-
-  grid-template-columns:
-    minmax(0, 1fr)
-    310px;
-
+  grid-template-columns: minmax(0, 1fr) 310px;
   gap: 18px;
 }
 
 .reportMain {
   display: grid;
-
   gap: 14px;
 }
 
@@ -727,9 +622,7 @@
 .reviewPanel {
   padding: 20px;
 
-  border:
-    1px solid var(--border);
-
+  border: 1px solid var(--border);
   border-radius: 12px;
 
   background: white;
@@ -740,7 +633,6 @@
 
   display: flex;
   align-items: center;
-
   gap: 10px;
 }
 
@@ -755,9 +647,7 @@
 
   border-radius: 7px;
 
-  background:
-    var(--blue-light);
-
+  background: var(--blue-light);
   color: var(--blue);
 
   font-size: 8px;
@@ -771,7 +661,6 @@
 
 .sectionHeader h2 {
   color: var(--text);
-
   font-size: 14px;
 }
 
@@ -779,23 +668,22 @@
   margin-top: 2px;
 
   color: var(--muted);
-
   font-size: 8px;
 }
 
+/* =========================
+   FIELDS
+========================= */
+
 .fieldGrid {
   display: grid;
-
-  grid-template-columns:
-    repeat(2, 1fr);
-
+  grid-template-columns: repeat(2, 1fr);
   gap: 13px;
 }
 
 .field,
 .textField {
   display: grid;
-
   gap: 6px;
 
   color: #42566d;
@@ -813,23 +701,19 @@
 .measurementBox input {
   width: 100%;
 
-  border:
-    1px solid #ccd7e1;
-
+  border: 1px solid #ccd7e1;
   border-radius: 7px;
 
   outline: none;
 
   background: white;
-
   color: var(--text);
 }
 
 .fieldControl input {
   height: 41px;
 
-  padding:
-    0 38px 0 11px;
+  padding: 0 38px 0 11px;
 
   font-size: 10px;
 }
@@ -842,15 +726,13 @@
   padding: 11px;
 
   font-size: 10px;
-
   line-height: 1.55;
 }
 
 .fieldControl input:focus,
 .textField textarea:focus,
 .measurementBox input:focus {
-  border-color:
-    var(--blue);
+  border-color: var(--blue);
 
   box-shadow:
     0 0 0 3px
@@ -858,11 +740,8 @@
 }
 
 .missingField {
-  border-color:
-    #dfb26d !important;
-
-  background:
-    #fffaf1 !important;
+  border-color: #dfb26d !important;
+  background: #fffaf1 !important;
 }
 
 .fieldIndicator {
@@ -871,8 +750,7 @@
   right: 10px;
   top: 50%;
 
-  transform:
-    translateY(-50%);
+  transform: translateY(-50%);
 
   width: 19px;
   height: 19px;
@@ -887,23 +765,18 @@
 }
 
 .fieldComplete {
-  background:
-    var(--green-light);
-
-  color:
-    var(--green);
+  background: var(--green-light);
+  color: var(--green);
 }
 
 .fieldMissing {
-  background:
-    var(--orange-light);
-
-  color:
-    var(--orange);
+  background: var(--orange-light);
+  color: var(--orange);
 }
 
-
-/* MEASUREMENT */
+/* =========================
+   MEASUREMENTS
+========================= */
 
 .measurementBox {
   padding: 15px;
@@ -911,7 +784,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   gap: 20px;
 
   border-radius: 9px;
@@ -921,13 +793,11 @@
 
 .measurementBox > div {
   display: grid;
-
   gap: 5px;
 }
 
 .measurementBox span {
   color: var(--muted);
-
   font-size: 8px;
 }
 
@@ -942,24 +812,22 @@
 
 .measurementBox p {
   max-width: 200px;
-
   margin: 0;
 
   color: var(--orange);
 
   font-size: 8px;
-
   text-align: right;
 }
 
-
-/* REVIEW PANEL */
+/* =========================
+   REVIEW PANEL
+========================= */
 
 .reviewPanel {
   align-self: start;
 
   position: sticky;
-
   top: 18px;
 }
 
@@ -967,16 +835,12 @@
   margin: 6px 0 17px;
 
   color: var(--text);
-
   font-size: 18px;
 }
 
 .reviewStats {
   display: grid;
-
-  grid-template-columns:
-    1fr 1fr;
-
+  grid-template-columns: 1fr 1fr;
   gap: 7px;
 }
 
@@ -995,7 +859,6 @@
 
 .reviewStats span {
   color: var(--muted);
-
   font-size: 7px;
 }
 
@@ -1003,33 +866,27 @@
   margin-top: 3px;
 
   color: var(--text);
-
   font-size: 15px;
 }
 
 .warningValue {
-  color:
-    var(--orange) !important;
+  color: var(--orange) !important;
 }
 
 .missingInformation {
   margin-top: 14px;
-
   padding: 12px;
 
   border-radius: 8px;
 
-  background:
-    var(--orange-light);
+  background: var(--orange-light);
 }
 
 .missingInformation > strong {
   display: block;
-
   margin-bottom: 8px;
 
   color: #8b591a;
-
   font-size: 9px;
 }
 
@@ -1038,11 +895,9 @@
 
   display: flex;
   align-items: center;
-
   gap: 6px;
 
   color: #886d4b;
-
   font-size: 8px;
 }
 
@@ -1064,18 +919,15 @@
   margin-top: 16px;
 
   display: grid;
-
   gap: 9px;
 }
 
 .verificationCheck {
   display: flex;
   align-items: center;
-
   gap: 7px;
 
   color: #52677e;
-
   font-size: 8px;
 }
 
@@ -1083,22 +935,19 @@
   width: 15px;
   height: 15px;
 
-  accent-color:
-    var(--green);
+  accent-color: var(--green);
 }
 
 .approveDraftButton {
   width: 100%;
 
   margin-top: 18px;
-
   padding: 12px;
 
   border: 0;
   border-radius: 8px;
 
   background: var(--navy);
-
   color: white;
 
   font-size: 9px;
@@ -1110,8 +959,7 @@
 }
 
 .approveDraftButton.approved {
-  background:
-    var(--green);
+  background: var(--green);
 }
 
 .approvalHelp {
@@ -1120,27 +968,55 @@
   color: var(--orange);
 
   font-size: 7px;
-
   line-height: 1.45;
 }
 
 .legalBoundary {
   margin-top: 14px;
-
   padding-top: 12px;
 
-  border-top:
-    1px solid var(--border);
+  border-top: 1px solid var(--border);
 
   color: #8795a4;
 
   font-size: 7px;
-
   line-height: 1.5;
 }
 
+/* =========================
+   BACKEND CONNECTION ERROR
+========================= */
 
-/* RESPONSIVE */
+.connectionError {
+  max-width: 900px;
+
+  margin: 0 auto 20px;
+  padding: 13px 15px;
+
+  border: 1px solid #efc6c8;
+  border-radius: 9px;
+
+  background: #fff0f1;
+  color: #b94147;
+}
+
+.connectionError strong,
+.connectionError span {
+  display: block;
+}
+
+.connectionError strong {
+  font-size: 10px;
+}
+
+.connectionError span {
+  margin-top: 3px;
+  font-size: 9px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media (max-width: 950px) {
   .reportLayout {
@@ -1156,7 +1032,6 @@
   .topbar,
   .reportHeader {
     align-items: flex-start;
-
     flex-direction: column;
   }
 
@@ -1176,7 +1051,6 @@
 
   .measurementBox {
     align-items: flex-start;
-
     flex-direction: column;
   }
 

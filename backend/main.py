@@ -1,9 +1,8 @@
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
-from gemma_service import transcribe_audio, generate_report
-from models import ProcessResponse
-
+from backend.gemma_service import transcribe_audio, generate_report
+from backend.models import ProcessResponse
 
 app = FastAPI(
     title="ReportReady API",

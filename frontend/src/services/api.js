@@ -1,14 +1,29 @@
-/*
- * 🚨 PURVA BACKEND CONNECTION FILE
- *
- * DO NOT CONNECT YET.
- *
- * When Purva's POST /api/process endpoint is ready,
- * Jada will put the frontend request here.
- */
+const API_URL = "http://127.0.0.1:8000";
 
-export async function processAudio() {
-  throw new Error(
-    "Purva backend is not connected yet."
+export async function processAudio(audioBlob) {
+  const formData = new FormData();
+
+  formData.append(
+    "file",
+    audioBlob,
+    "recording.webm"
   );
+
+  const response = await fetch(
+    `${API_URL}/api/process`,
+    {
+      method: "POST",
+      body: formData,
+    }
+  );
+
+  if (!response.ok) {
+    const errorText = await response.text();
+
+    throw new Error(
+      `Backend error: ${errorText}`
+    );
+  }
+
+  return await response.json();
 }

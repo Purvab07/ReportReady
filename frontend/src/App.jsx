@@ -5,43 +5,117 @@ import Recorder from "./components/Recorder";
 import Processing from "./components/Processing";
 import ReportForm from "./components/ReportForm";
 
-import { mockReport } from "./mock/mockReport";
+import { processAudio } from "./services/api";
 
 import "./App.css";
+
+function convertBackendReport(data) {
+  const backendReport = data?.report || {};
+
+  return {
+    incidentType:
+      backendReport.incident_type || "",
+
+    date:
+      backendReport.date || "",
+
+    time:
+      backendReport.time || "",
+
+    location:
+      backendReport.location || "",
+
+    driver: {
+      name:
+        backendReport.driver_name || "",
+
+      license:
+        backendReport.driver_license || "",
+    },
+
+    vehicle: {
+      description:
+        backendReport.vehicle || "",
+
+      plate:
+        backendReport.license_plate || "",
+    },
+
+    reasonForStop:
+      backendReport.reason_for_stop || "",
+
+    observations: Array.isArray(
+      backendReport.observations
+    )
+      ? backendReport.observations.join("\n")
+      : backendReport.observations || "",
+
+    driverStatement:
+      backendReport.driver_statement || "",
+
+    measurements: {
+      breathAlcohol:
+        backendReport.breathalyzer || "",
+    },
+
+    narrative:
+      backendReport.report_narrative || "",
+  };
+}
 
 function App() {
   const [screen, setScreen] =
     useState("capture");
 
   const [report, setReport] =
-    useState(mockReport);
+    useState(null);
 
-  function handleRecordingComplete(audioBlob) {
-    /*
-     * 🚨 PURVA CONNECTS HERE LATER.
-     *
-     * Right now:
-     * audioBlob exists but we DO NOT send it anywhere.
-     *
-     * We fake the processing delay and then display
-     * mockReport.
-     */
+  const [error, setError] =
+    useState("");
 
-    console.log(
-      "Demo audio captured:",
-      audioBlob
-    );
-
+  async function handleRecordingComplete(
+    audioBlob
+  ) {
+    setError("");
     setScreen("processing");
 
-    window.setTimeout(() => {
-      setReport(mockReport);
+    try {
+      const data =
+        await processAudio(audioBlob);
+
+      console.log(
+        "BACKEND RESPONSE:",
+        data
+      );
+
+      console.log(
+        "TRANSCRIPT:",
+        data.transcript
+      );
+
+      const convertedReport =
+        convertBackendReport(data);
+
+      setReport(convertedReport);
       setScreen("report");
-    }, 2200);
+    } catch (err) {
+      console.error(
+        "PROCESSING ERROR:",
+        err
+      );
+
+      setError(
+        err.message ||
+          "Failed to process recording."
+      );
+
+      setScreen("capture");
+    }
   }
 
   function startNewRecording() {
-    setReport(mockReport);
+    setError("");
+    setReport(null);
     setScreen("capture");
   }
 
@@ -50,6 +124,17 @@ function App() {
       <Header />
 
       <main className="mainContent">
+
+        {error && (
+          <div className="connectionError">
+            <strong>
+              Processing failed
+            </strong>
+
+            <span>{error}</span>
+          </div>
+        )}
+
         {screen === "capture" && (
           <Recorder
             onComplete={
@@ -62,15 +147,16 @@ function App() {
           <Processing />
         )}
 
-        {screen === "report" && (
-          <ReportForm
-            report={report}
-            setReport={setReport}
-            onNewRecording={
-              startNewRecording
-            }
-          />
-        )}
+        {screen === "report" &&
+          report && (
+            <ReportForm
+              report={report}
+              setReport={setReport}
+              onNewRecording={
+                startNewRecording
+              }
+            />
+          )}
       </main>
     </div>
   );
